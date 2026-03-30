@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login — SecureAuth</title>
+    <title>Login — X-Ford</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -98,11 +98,25 @@
         .main-wrapper {
             position: relative; z-index: 1;
             display: flex; min-height: 100vh;
+            align-items: center;
+            justify-content: center;
         }
 
         /* --- LADO IZQUIERDO: Info de empresa --- */
+        .background-info{
+            padding: 0px !important;
+            box-sizing: content-box !important;
+            background-color: rgba(2, 0, 26, 0.356);
+            width: auto !important;
+        }
+        .background-info::after, .background-info::before{
+            padding: 0px !important;
+            box-sizing: content-box !important;
+            width: auto !important;
+        }
         .side-info {
             flex: 1; display: flex; flex-direction: column;
+            align-items: center;
             justify-content: center; padding: 60px 56px;
             position: relative; overflow: hidden;
         }
@@ -142,6 +156,8 @@
         }
 
         .side-logo-text {
+            justify-content: center;
+            align-items: center;
             font-size: 1.6rem; font-weight: 700;
             letter-spacing: -0.5px;
         }
@@ -151,6 +167,8 @@
             line-height: 1.15; letter-spacing: -1px;
             margin-bottom: 18px;
             animation: fadeInUp 0.6s 0.4s both;
+            text-align: center;
+            align-items: center;
         }
 
         .side-headline .highlight {
@@ -161,9 +179,14 @@
         }
 
         .side-desc {
+            display: flex;
+            flex-direction: column; /* Apila el contenido verticalmente */
+            align-items: center;    /* Centra horizontalmente en modo columna */
+            justify-content: center; /* Centra verticalmente si el div tiene altura */
+            text-align: center;
             font-size: 1rem; color: var(--text-secondary);
             line-height: 1.7; max-width: 440px;
-            margin-bottom: 44px;
+            margin-bottom: 44px; display: flex;
             animation: fadeInUp 0.6s 0.5s both;
         }
 
@@ -246,13 +269,13 @@
 
         /* --- LADO DERECHO: Formulario --- */
         .side-form {
-            width: 520px; flex-shrink: 0;
+            width: 900px; flex-shrink: 0;
             display: flex; align-items: center; justify-content: center;
             padding: 40px;
         }
 
         .login-card {
-            width: 100%; max-width: 420px;
+            width: 100%; max-width: 520px;
             background: var(--bg-card);
             backdrop-filter: blur(40px) saturate(1.4);
             -webkit-backdrop-filter: blur(40px) saturate(1.4);
@@ -282,17 +305,22 @@
 
         /* Branding compacto dentro de la card */
         .brand {
+            justify-content:center;
+            align-items: center;
+            display: flex;gap: 8px;
             text-align: center; margin-bottom: 28px;
-            position: relative; z-index: 1;
+            position: relative; z-index: 1;max-width: 440px;
+            margin: 0 auto 32px auto;
         }
 
         .brand-icon {
             width: 48px; height: 48px; border-radius: 14px;
             background: var(--gradient-main);
             display: inline-flex; align-items: center; justify-content: center;
-            margin-bottom: 14px; font-size: 18px; color: white;
             box-shadow: 0 6px 25px -4px var(--blue-glow);
-            position: relative;
+            position: relative;display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .brand-icon::after {
@@ -307,6 +335,11 @@
         .panel { display: none; position: relative; z-index: 1; }
         .panel.active { display: block; animation: panelIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         @keyframes panelIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+
+        .panel-label, .panel-title, .panel-desc{
+            text-align: center;
+            justify-content: center;
+        }
 
         .panel-label {
             font-size: 0.7rem; font-weight: 600; letter-spacing: 1.5px;
@@ -564,23 +597,20 @@
     <div class="main-wrapper">
 
         <!-- ========== LADO IZQUIERDO: Info empresa ========== -->
+    <div class="background-info">
         <aside class="side-info">
-            <div class="side-badge">
-                <i class="fa-solid fa-bolt"></i>
-                Plataforma v2.0
-            </div>
 
             <div class="side-logo">
                 <div class="side-logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <span class="side-logo-text">SecureAuth</span>
+                <span class="side-logo-text">X-Ford</span>
             </div>
 
             <h2 class="side-headline">
-                Autenticacion<br><span class="highlight">segura y rapida</span><br>para tu equipo
+                Máximo enfoque<br><span class="highlight">y energía total</span><br>para tu día
             </h2>
 
             <p class="side-desc">
-                Protege el acceso a tus sistemas con verificacion en dos pasos, cifrado de extremo a extremo y monitoreo en tiempo real de sesiones activas.
+                Optimiza tu rendimiento mental y físico con nootrópicos de alta precisión, fórmulas adaptativas y una app inteligente que ajusta tu suplementación según tu nivel de actividad diaria.
             </p>
 
             <div class="features-list">
@@ -589,8 +619,8 @@
                         <i class="fa-solid fa-fingerprint"></i>
                     </div>
                     <div class="feature-text">
-                        <h4>Verificacion OTP</h4>
-                        <p>Codigo de un solo uso enviado a tu correo en segundos.</p>
+                        <h4>Fórmulas Nootrópicas</h4>
+                        <p>Mezcla avanzada para un enfoque mental sostenido sin caídas de energía.</p>
                     </div>
                 </div>
                 <div class="feature-item">
@@ -598,8 +628,8 @@
                         <i class="fa-solid fa-lock"></i>
                     </div>
                     <div class="feature-text">
-                        <h4>Cifrado bcrypt</h4>
-                        <p>Contraseñas encriptadas con el estandar de la industria.</p>
+                        <h4>Adaptabilidad Inteligente</h4>
+                        <p>La app ajusta tus dosis semanales basándose en tu fatiga y rendimiento.</p>
                     </div>
                 </div>
                 <div class="feature-item">
@@ -607,8 +637,8 @@
                         <i class="fa-solid fa-chart-line"></i>
                     </div>
                     <div class="feature-text">
-                        <h4>Monitoreo 24/7</h4>
-                        <p>Deteccion de accesos sospechosos y bloqueo automatico.</p>
+                        <h4>Sincronización Total</h4>
+                        <p>Integración con wearables para monitoreo continuo de tus métricas de salud.</p>
                     </div>
                 </div>
             </div>
@@ -620,14 +650,15 @@
                 </div>
                 <div class="metric-item">
                     <div class="metric-value">99.9%</div>
-                    <div class="metric-label">Disponibilidad</div>
+                    <div class="metric-label">Mejor reportada de concentración</div>
                 </div>
                 <div class="metric-item">
-                    <div class="metric-value">0</div>
-                    <div class="metric-label">Brechas de seguridad</div>
+                    <div class="metric-value">95%</div>
+                    <div class="metric-label">Satisfacción del cliente</div>
                 </div>
             </div>
         </aside>
+    </div>
 
         <!-- ========== LADO DERECHO: Formulario ========== -->
         <section class="side-form">
@@ -636,8 +667,7 @@
                 <!-- Branding compacto -->
                 <div class="brand">
                     <div class="brand-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h1 class="brand-title">SecureAuth</h1>
-                    <p class="brand-subtitle">Plataforma de autenticacion segura</p>
+                    <h1 class="brand-title">X-Ford</h1>
                 </div>
 
                 <!-- ==================== PANEL: LOGIN ==================== -->
@@ -670,15 +700,12 @@
                                 <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
                                 <span class="checkbox-label">Recordarme</span>
                             </label>
-                            <a href="#" class="forgot-link">Recuperar acceso</a>
                         </div>
                         <button type="submit" class="btn-primary" id="btnLogin">
                             <span class="btn-text">Iniciar sesion</span>
                             <div class="spinner"></div>
                         </button>
                     </form>
-                    <div class="divider"><span class="divider-line"></span><span class="divider-text">o continuar con</span><span class="divider-line"></span></div>
-                    <div class="card-footer">No tienes cuenta? <a href="#">Crear cuenta</a></div>
                 </div>
 
                 <!-- ==================== PANEL: OTP ==================== -->
