@@ -42,7 +42,7 @@ require_once dirname(dirname(__DIR__)) . '/config/database.php';
 
 // Determinar qué acción ejecutar
  $accion = $_POST['accion'] ?? '';
-
+/*
 switch ($accion) {
 
     case 'login':
